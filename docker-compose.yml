@@ -1,0 +1,65 @@
+services:
+  app:
+    build:
+      context: .
+    image: kasir_vnt_app
+    container_name: kasir_vnt_app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+    working_dir: /var/www/kasir_vnt
+    volumes:
+      - .:/var/www/kasir_vnt/
+      - ./storage:/var/www/kasir_vnt/storage
+      - ./storage/php.ini:/usr/local/etc/php/conf.d/local.ini  # Pastikan file php.ini ada
+    networks:
+      - kasir_vnt
+
+  webserver:
+    image: nginx:alpine
+    container_name: kasir_vnt_nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "2022:80"
+    volumes:
+      - .:/var/www/kasir_vnt
+      - ./storage:/var/www/kasir_vnt/storage
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - kasir_vnt
+
+  db:
+    image: mysql:5.7
+    container_name: kasir_vnt_db
+    restart: always
+    tty: true
+    ports:
+      - "20222:3306"
+    volumes:
+      - kasir_vnt_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: farul123
+      MYSQL_DATABASE: vnt_kasir
+    networks:
+      - kasir_vnt
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: kasir_vnt_pma
+    links:
+      - db
+    restart: always
+    ports:
+      - "7000:80"
+    networks:
+      - kasir_vnt
+
+networks:
+  kasir_vnt:
+    driver: bridge
+
+volumes:
+  kasir_vnt_data:
+    driver: local
