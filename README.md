@@ -57,7 +57,7 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan aplikasi ini di komputer An
 ### **1. Clone Repository**
 Clone repository project ini menggunakan Git.
 ```bash
-git clone https://github.com/farul1/Kasir_CafeVNT
+git clone https://github.com/farul1/Kasir_CafeVNT.git
 cd coffee-vnt-management-system
 ```
 
