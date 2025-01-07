@@ -129,7 +129,7 @@ Untuk mengotomatisasi pipeline deployment, Anda bisa menggunakan Jenkins dan Ngr
 ---
 
 ## 💬 Hubungi Kami
-Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu untuk menghubungi kami di [support@coffeebar.com](mailto:support@coffeebar.com).
+Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu untuk menghubungi kami di [priwantoro.syafarul@gmail.com](priwantoro.syafarul@gmail.com).
 
 ---
 
