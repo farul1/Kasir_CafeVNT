@@ -59,6 +59,7 @@ Clone repository project ini menggunakan Git.
 ```bash
 git clone https://github.com/<username>/coffee-vnt-management-system.git
 cd coffee-vnt-management-system
+```
 
 
 ### **2. Install Dependencies**
