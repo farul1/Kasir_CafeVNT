@@ -1,6 +1,3 @@
-Berikut adalah versi lengkap `README.md` yang telah diperbarui dengan penataan menarik dan gambar dashboard untuk setiap role dalam Coffee VNT Management System:
-
-```markdown
 # Coffee VNT Management System
 
 Coffee VNT Management System adalah aplikasi berbasis web yang dirancang untuk mempermudah pengelolaan operasional di **Coffee Shop VNT**. Aplikasi ini fokus pada pengelolaan data pengguna, menu, transaksi, dan aktivitas log pengguna yang dapat diakses oleh tiga peran utama: **Admin**, **Manager**, dan **Kasir**.
@@ -62,7 +59,7 @@ Clone repository project ini menggunakan Git.
 ```bash
 git clone https://github.com/<username>/coffee-vnt-management-system.git
 cd coffee-vnt-management-system
-```
+
 
 ### **2. Install Dependencies**
 Pastikan Anda telah menginstal **Composer** dan **NPM**. Jika belum, Anda bisa menginstalnya terlebih dahulu.
@@ -133,8 +130,6 @@ Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu
 
 ---
 
-Dengan menggunakan sistem manajemen ini, operasional Coffee Shop VNT akan semakin efisien dan mudah dikelola oleh semua peran yang terlibat. Nikmati pengalaman baru dalam mengelola bisnis kopi Anda!
-```
 
 ### Fitur Utama:
 - **Gambar Dashboard:** Gambar dashboard untuk setiap role (Admin, Manager, Kasir) telah disertakan dengan deskripsi singkat mengenai fitur utama yang dapat diakses oleh masing-masing role.
