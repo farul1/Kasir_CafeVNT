@@ -36,7 +36,7 @@ Sebagai Kasir, Anda berfokus pada transaksi pelanggan. Fitur yang dapat diakses 
 - **Pengelolaan Profil Pengguna:** Mengelola profil kasir.
 
 ![Kasir Dashboard](public/images/kasir.gif)
-**Contoh Ekspor PDF**
+- **Contoh Ekspor PDF**
 ![Kasir Dashboard](public/images/midtrans.gif)
 
 ---
