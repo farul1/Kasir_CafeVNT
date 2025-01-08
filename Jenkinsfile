@@ -14,7 +14,7 @@ pipeline {
                 script {
                     try {
                         git credentialsId: 'cafevnt-github',
-                            url: 'https://github.com/farul1/CafeVNT-systemKasir'
+                            url: 'https://github.com/farul1/Kasir_CafeVNT'
                     } catch (Exception e) {
                         error "SCM checkout failed: ${e.message}"
                     }
