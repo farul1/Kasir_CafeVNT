@@ -35,8 +35,7 @@ Sebagai Kasir, Anda berfokus pada transaksi pelanggan. Fitur yang dapat diakses 
 - **Ekspor Data Transaksi:** Mengekspor data transaksi dalam format **Excel** dan **PDF**.
 - **Pengelolaan Profil Pengguna:** Mengelola profil kasir.
 
-![Kasir Dashboard](public/images/kasir-dashboard.png)
-[Download Video](public/images/kasir.mp4)
+![Kasir Dashboard](public/images/kasir.gif)
 
 ---
 
