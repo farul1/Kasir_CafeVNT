@@ -16,7 +16,7 @@ Sebagai Admin, Anda memiliki akses penuh untuk mengelola aplikasi dan data yang 
 - **Log Aktivitas:** Melihat aktivitas pengguna dalam sistem.
 - **Pengelolaan Profil Pengguna:** Mengelola profil admin dan pengguna lain.
 
-![Admin Dashboard](public/images/admin-dashboard.png)
+![Admin Dashboard](public/images/admin.gif)
 
 ### **👨‍💼 Manager**
 Manager memiliki kemampuan untuk mengelola menu dan transaksi. Fitur yang dapat diakses antara lain:
@@ -26,7 +26,7 @@ Manager memiliki kemampuan untuk mengelola menu dan transaksi. Fitur yang dapat 
 - **Lihat Transaksi:** Mengelola data transaksi seperti nama pelanggan, menu yang dipesan, total harga, dan lebih banyak lagi.
 - **Pengelolaan Profil Pengguna:** Mengelola profil manager dan pengguna lain.
 
-![Manager Dashboard](public/images/manager-dashboard.png)
+![Manager Dashboard](public/images/manager.gif)
 
 ### **👨‍🍳 Kasir**
 Sebagai Kasir, Anda berfokus pada transaksi pelanggan. Fitur yang dapat diakses antara lain:
