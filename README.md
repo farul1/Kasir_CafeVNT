@@ -4,7 +4,7 @@ Coffee VNT Management System adalah aplikasi berbasis web yang dirancang untuk m
 
 Dengan antarmuka yang intuitif dan fitur lengkap, sistem ini membantu meningkatkan efisiensi operasional di Coffee Shop VNT.
 
-Dibikin OLeh: Syafarul Priwantoro Dan Shafira Daffa Tzabillah. Mahasiswa Telkom Surabaya
+Dibikin Oleh: **Syafarul Priwantoro** Dan **Shafira Daffa Tzabillah** (**Mahasiswa Telkom Surabaya**)
 
 ---
 
