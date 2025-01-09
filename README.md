@@ -50,7 +50,7 @@ Berikut adalah GIF yang menunjukkan pipeline otomatis yang dijalankan melalui Je
 ![Jenkins Pipeline](public/images/jenkins.gif)
 
 - **Docker**
-![Jenkins Pipeline](public/images/docker.gif)
+![ Docker](public/images/docker.gif)
 ---
 
 ## 🛠️ Teknologi yang Digunakan
