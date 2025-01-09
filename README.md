@@ -47,10 +47,10 @@ Sebagai Kasir, Anda berfokus pada transaksi pelanggan. Fitur yang dapat diakses 
 ### **🚀 Jenkins Pipeline**
 Berikut adalah GIF yang menunjukkan pipeline otomatis yang dijalankan melalui Jenkins untuk aplikasi ini:
 
-![Jenkins Pipeline](public/images/jenkins_pipeline.gif)
+![Jenkins Pipeline](public/images/jenkins.gif)
 
 - **Docker**
-![Jenkins Pipeline](public/images/jenkins_pipeline.gif)
+![Jenkins Pipeline](public/images/docker.gif)
 ---
 
 ## 🛠️ Teknologi yang Digunakan
