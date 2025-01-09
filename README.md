@@ -43,6 +43,14 @@ Sebagai Kasir, Anda berfokus pada transaksi pelanggan. Fitur yang dapat diakses 
   
 ![Kasir Dashboard](public/images/midtrans.gif)
 
+
+### **🚀 Jenkins Pipeline**
+Berikut adalah GIF yang menunjukkan pipeline otomatis yang dijalankan melalui Jenkins untuk aplikasi ini:
+
+![Jenkins Pipeline](public/images/jenkins_pipeline.gif)
+
+- **Docker**
+![Jenkins Pipeline](public/images/jenkins_pipeline.gif)
 ---
 
 ## 🛠️ Teknologi yang Digunakan
