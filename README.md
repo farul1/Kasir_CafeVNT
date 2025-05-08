@@ -154,4 +154,3 @@ Jika Anda memiliki pertanyaan atau membutuhkan bantuan lebih lanjut, jangan ragu
 - **Langkah Instalasi yang Jelas:** Langkah-langkah instalasi disusun secara terperinci dan mudah diikuti.
 - **Kontak & Kontribusi:** Ditambahkan informasi mengenai cara menghubungi tim pengembang jika ada masalah atau pertanyaan.
 
-Dengan struktur ini, pembaca tidak hanya akan lebih tertarik, tetapi juga lebih mudah mengikuti petunjuk instalasi dan memahami fungsi-fungsi aplikasi.
