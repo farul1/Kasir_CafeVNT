@@ -39,3 +39,5 @@ Here are some demos :
 - Run `php artisan migrate`
 - Run `php artisan serve`
 - Go to http://localhost:8000/
+
+Update bersama dengan firatzblh.
