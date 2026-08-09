@@ -1,0 +1,71 @@
+/* Style untuk container utama */
+.white-box {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul */
+.box-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Wrapper untuk profil */
+.profile-wrapper {
+    margin-bottom: 20px;
+}
+
+/* Label untuk input */
+.form-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+.form-control {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Hover effect untuk input */
+.form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+}
+
+/* Menambahkan margin di bawah tiap input untuk jarak antar elemen */
+.profile-wrapper.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Responsif: Menyesuaikan layout dengan layar lebih kecil */
+@media (max-width: 768px) {
+    .white-box {
+        padding: 15px;
+    }
+
+    .box-title {
+        font-size: 20px;
+    }
+
+    .profile-wrapper {
+        margin-bottom: 15px;
+    }
+
+    .form-label {
+        font-size: 13px;
+    }
+
+    .form-control {
+        font-size: 15px;
+    }
+}

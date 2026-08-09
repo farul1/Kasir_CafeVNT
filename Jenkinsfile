@@ -1,119 +1,66 @@
 pipeline {
     agent any
-    environment {
-        DOCKER_IMAGE = 'kasir_vnt_app'
-        NETWORK_NAME = 'kasir_vnt'
-        MYSQL_ROOT_PASSWORD = 'farul123'
-        MYSQL_DATABASE = 'vnt_kasir'
+    tools {
+        jdk 'JDK 21'
+        maven 'maven3'
     }
+    environment {
+        DOCKER_TAG = ''
+    }
+
     stages {
-        stage('Preparation') {
+        stage('SCM') {
             steps {
-                echo 'Checking Docker environment and cleaning up previous resources...'
                 script {
                     try {
-                        bat '''
-                        echo Checking if Docker is installed...
-                        docker --version || (echo Docker is not installed && exit /b 1)
-
-                        echo Checking if Docker Compose is installed...
-                        docker-compose --version || (echo Docker Compose is not installed && exit /b 1)
-
-                        echo Stopping and cleaning up previous containers...
-                        docker-compose down || true
-
-                        echo Removing Docker network if exists...
-                        docker network rm %NETWORK_NAME% || echo "Network does not exist, skipping."
-                        '''
+                        git credentialsId: 'cafevnt-github',
+                            url: 'https://github.com/farul1/Kasir_CafeVNT'
                     } catch (Exception e) {
-                        error "Preparation stage failed: ${e.message}"
+                        error "SCM checkout failed: ${e.message}"
                     }
                 }
             }
         }
 
-        stage('Build Docker Images') {
+        stage('Set Version') {
             steps {
-                echo 'Building Docker images...'
                 script {
                     try {
-                        bat '''
-                        echo Building images with Docker Compose...
-                        docker-compose build --no-cache --pull
-                        '''
+                        def commitHash = bat(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
+                        env.DOCKER_TAG = commitHash
                     } catch (Exception e) {
-                        error "Failed to build Docker images: ${e.message}"
+                        error "Failed to get commit hash: ${e.message}"
                     }
                 }
             }
         }
 
-        stage('Run Containers') {
+        stage('Install Dependencies') {
             steps {
-                echo 'Starting containers with Docker Compose...'
                 script {
                     try {
-                        bat '''
-                        docker-compose up -d
-                        echo Containers are starting, waiting for services to initialize...
-                        :loop
-                        curl -s http://localhost:2022 > nul
-                        if %errorlevel% neq 0 (
-                            echo Waiting for application to start...
-                            timeout /t 5
-                            goto loop
-                        )
-                        echo Application is ready!
-
-                        echo Showing running containers:
-                        docker ps
-                        '''
+                        def gdCheck = bat(script: 'php -m | findstr gd', returnStatus: true)
+                        if (gdCheck != 0) {
+                            error "PHP GD extension is not enabled. Enable it in php.ini."
+                        }
+                        bat 'composer install --no-dev --optimize-autoloader'
                     } catch (Exception e) {
-                        error "Failed to start containers: ${e.message}"
+                        error "Failed to install dependencies: ${e.message}"
                     }
                 }
             }
         }
 
-        stage('Validate Application') {
-            steps {
-                echo 'Validating application container...'
-                script {
-                    try {
-                        bat '''
-                        echo Checking if application container is running...
-                        docker ps | findstr %DOCKER_IMAGE% || (echo Application container not running! && exit /b 1)
-
-                        echo Checking application accessibility on port 2022...
-                        curl -I http://localhost:2022 -m 15 || (echo Application not reachable! && exit /b 1)
-                        '''
-                    } catch (Exception e) {
-                        error "Application validation failed: ${e.message}"
-                    }
-                }
+        stage('Docker Build') {
+            when {
+                expression { currentBuild.result == null }
             }
-        }
-
-        stage('Validate Database') {
             steps {
-                echo 'Validating database connection...'
                 script {
                     try {
-                        bat '''
-                        echo Checking if database container is running...
-                        docker ps | findstr kasir_vnt_db || (echo Database container not running! && exit /b 1)
-
-                        echo Validating database connection...
-                        for /f "tokens=*" %%i in ('docker ps -qf "name=kasir_vnt_db"') do (
-                            docker exec %%i mysql -uroot -p%MYSQL_ROOT_PASSWORD% -e "USE %MYSQL_DATABASE%;" || (
-                                echo Database validation failed! Checking logs for MySQL container...
-                                docker logs kasir_vnt_db
-                                exit /b 1
-                            )
-                        )
-                        '''
+                        bat "docker build -t farul672/vnt_kasir:${env.DOCKER_TAG} ."
                     } catch (Exception e) {
-                        error "Database validation failed: ${e.message}"
+                        error "Docker build failed: ${e.message}"
                     }
                 }
             }
@@ -122,19 +69,22 @@ pipeline {
 
     post {
         always {
-            echo 'Cleaning up containers and networks...'
-            script {
-                bat '''
-                docker-compose down
-                echo Cleanup completed.
-                '''
-            }
+            echo 'Cleaning up workspace...'
+            cleanWs()
         }
+
         success {
-            echo 'Pipeline completed successfully!'
+            echo 'Pipeline completed successfully.'
+            discordSend description: "🚀 **Build Sukses!** Docker image berhasil dibangun dengan tag: ${env.DOCKER_TAG}. 🎉 Siapkan dirimu untuk meluncurkan sistem kasir ke dunia! Cek log lengkap di Jenkins dan siapkan kopi ☕ untuk merayakan! 🎉",
+                        footer: 'Jenkins CI/CD - Build Sukses',
+                        webhookURL: 'https://discord.com/api/webhooks/1321977592731144226/ua7asoAR0O5KAFQrUgZHrYunx-1L_mLBgV6hp08Xe960xDgAUXkMRh0FeJRjcrIypjr1'
         }
+
         failure {
-            echo 'Pipeline failed. Please check the logs above for details.'
+            echo 'Pipeline failed. Check logs for details.'
+            discordSend description: '❌ **Build Gagal!** Aduh, sepertinya ada yang salah! Cek detail error di Jenkins untuk mengetahui apa yang perlu diperbaiki. Jangan khawatir, kita pasti bisa atasi ini! 💪',
+                        footer: 'Jenkins CI/CD - Build Gagal',
+                        webhookURL: 'https://discord.com/api/webhooks/1321977592731144226/ua7asoAR0O5KAFQrUgZHrYunx-1L_mLBgV6hp08Xe960xDgAUXkMRh0FeJRjcrIypjr1'
         }
     }
 }

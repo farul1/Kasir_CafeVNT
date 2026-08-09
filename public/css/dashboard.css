@@ -1,0 +1,349 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #3e3e3e;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+#navbarSupportedContent {
+    background-color: #a0785a !important;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+#navbarSupportedContent a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+#navbarSupportedContent a:hover {
+    color: #ffb84d; /* Aksen emas untuk hover */
+    text-decoration: underline;
+}
+
+/* Sidebar Styles */
+.left-sidebar {
+    width: 250px;
+    background-color: #2f2f2f;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 4px 0px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.scroll-sidebar {
+    overflow-y: auto;
+    height: 100%;
+}
+
+
+.sidebar-item {
+    margin-bottom: 20px;
+}
+
+.sidebar-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-link:hover {
+    background-color: #6f4f1f;
+    transform: scale(1.05);
+}
+
+.sidebar-link.active {
+    background-color: #ffb84d;
+    color: #2f2f2f;
+}
+
+.sidebar-link i {
+    margin-right: 12px;
+    font-size: 22px;
+}
+
+/* Sidebar Icons */
+.fas, .far, .fa-solid, .fa-brands {
+    transition: color 0.3s ease;
+}
+
+.sidebar-link:hover i {
+    color: #ffb84d;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+    color: #fff;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: -45px;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+    color: #ffb84d;
+}
+
+/* Adjustments for Mobile */
+@media (max-width: 768px) {
+    .left-sidebar {
+        width: 200px;
+    }
+
+    .sidebar-item {
+        margin-bottom: 15px;
+    }
+
+    .sidebar-link {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .sidebar-link i {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+/* Icon Card */
+.icon-card {
+    font-size: 40px;
+    padding-left: 10px;
+    color: #6f4f1f;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-card:hover {
+    color: #ffb84d;
+    transform: scale(1.2);
+}
+
+/* Form Label */
+.form-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #3e3e3e;
+}
+
+/* Invalid Feedback */
+.invalid-feedback {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #d9534f;
+    font-weight: 600;
+    background-color: #f8d7da;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Textarea */
+textarea {
+    resize: none;
+    border: 1px solid #ddd;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    background-color: #fffaf0;
+}
+
+textarea:focus {
+    border-color: #6f4f1f;
+    outline: none;
+}
+
+/* Input Fields */
+input[type="date"].date, input[type="text"].pencarian {
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #fffaf0;
+    transition: all 0.3s ease;
+}
+
+input[type="text"].pencarian {
+    width: 250px;
+}
+
+input[type="text"].pencarian:focus {
+    border-color: #6f4f1f;
+}
+
+/* Button */
+.btn-back {
+    background-color: #3e3e3e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #6f4f1f;
+    transform: scale(1.05);
+}
+
+/* White Box */
+.white-box {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.white-box:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Box Title */
+.box-title {
+    color: #6f4f1f;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Counter */
+.counter {
+    font-size: 40px;
+    font-weight: bold;
+    color: #6f4f1f;
+}
+
+/* Text Colors */
+.text-success {
+    color: #388e3c;
+}
+
+.text-purple {
+    color: #6a1b9a;
+}
+
+.text-info {
+    color: #0288d1;
+}
+
+/* Table Styling */
+.table-responsive {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+    background-color: #6f4f1f;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.table tbody tr td {
+    color: #3e3e3e;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Pagination Styling */
+.pagination .page-item .page-link {
+    color: #6f4f1f;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: #ffb84d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #6f4f1f;
+    border-color: #6f4f1f;
+    color: white;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    #navbarSupportedContent {
+        padding: 10px;
+    }
+
+    .table thead th, .table tbody td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .icon-card {
+        font-size: 30px;
+    }
+
+    .pencarian {
+        width: 100%;
+    }
+
+    .counter {
+        font-size: 30px;
+    }
+
+    .btn-back {
+        padding: 10px 15px;
+    }
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text {
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-right: 0;
+}
+
+.form-control {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
